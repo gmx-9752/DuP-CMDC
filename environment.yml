@@ -1,0 +1,27 @@
+name: dup_cmdc
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cupy
+  - rust
+  - pip
+  - pip:
+    - diffusers
+    - transformers
+    - easydict
+    - numpy
+    - pandas
+    - Pillow
+    - PyYAML
+    - setuptools
+    - setuptools_rust
+    - scikit-image
+    - tqdm
+    - lpips
+    - -e lib/diffc/rcc/arithmetic-coding/python-bindings
