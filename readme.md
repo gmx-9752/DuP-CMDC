@@ -22,16 +22,26 @@ conda env create -f environment.yml
 conda activate dup_cmdc
 ```
 
-## Usage
+## Train
 
 ```
-python evaluate.py --config configs/SanaDiT-600M-1024-mydata.yaml --checkpoint outputs/best_val_macro.pt --rgb_list your RGB image.yaml --thermal_list your thermal image.yaml --recon_timesteps 170 --modalities rgb,thermal
+bash RUN_TRAIN.sh
+```
+
+Before starting training, download the pretrained [SANA](https://huggingface.co/Efficient-Large-Model/Sana_600M_1024px_diffusers) model into ./weight.
+
+## Test
+
+For quick evaluation, use
+
+```
+bash RUN_EVAL.sh
 ```
 
 To save the compressed representation of an image as a `diffc` file, use
 
 ```
-python compress.py --config configs/SanaDiT-600M-1024-mydata.yaml --checkpoint outputs/best_val_macro.pt --rgb_list your RGB image.yaml --thermal_list your thermal image.yaml --recon_timestep 170 --output_dir results/bitstreams
+python compress.py --config configs/SanaDiT-600M-1024-mydata.yaml --checkpoint outputs/best_val_macro.pt --rgb_list /path/to/your/RGB/test/images.list --thermal_list /path/to/your/thermal/test/images.list --recon_timestep 170 --output_dir results/bitstreams
 ```
 
 To reconstruct an image/images from their compressed representations, use
@@ -45,10 +55,12 @@ Note that currently, compress and decompress.py only work with `SanaDiT-600M-102
 
 ## Acknowledgments
 
-We sincerely thank the authors of diffc(https://github.com/JeremyIV/diffc) for making their valuable research and implementations publicly available.
+We sincerely thank the authors of [diffc](https://github.com/JeremyIV/diffc) for making their valuable research and implementations publicly available.
 
 Our implementation builds upon their codebase. We acknowledge their contributions and refer users to the corresponding repositories for the original methods, implementation details, and licensing information.
 
 ## License and Attribution
 
 The original implementation of diffc remains subject to their respective licenses and copyright notices. Any redistributed or modified third-party components must comply with the applicable license terms.
+
+Please refer to the original repositories and dataset providers for their licensing conditions.
