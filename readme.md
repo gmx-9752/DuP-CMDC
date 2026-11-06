@@ -1,4 +1,4 @@
-# Rate-Accounted Cross-Modality Structure and Timestep-Routed Priors for RGB–Thermal Image Compression
+# Structure over Bits: Rate-Accounted Cross-Modal Prompts for Ultra-Low-Bitrate UAV Streaming
 
 
 ## Abstract
