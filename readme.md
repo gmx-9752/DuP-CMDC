@@ -30,6 +30,10 @@ bash RUN_TRAIN.sh
 
 Before starting training, download the pretrained [SANA](https://huggingface.co/Efficient-Large-Model/Sana_600M_1024px_diffusers) model into ./weight.
 
+Furthermore, before training, download the corresponding VTUAV dataset. 
+
+**Download:** [Baidu Drive](https://pan.baidu.com/s/1Yaqm-7aoUyEa0_T3fjw8xg?pwd=b7qh )
+
 ## Test
 
 For quick evaluation, use
